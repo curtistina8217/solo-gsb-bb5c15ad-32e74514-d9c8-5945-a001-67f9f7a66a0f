@@ -1,0 +1,14 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Optional overrides (defaults shown):
+      - DATABASE_PATH=/data/msprecompute.db
+    volumes:
+      - msdata:/data
+    restart: unless-stopped
+
+volumes:
+  msdata:
